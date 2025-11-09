@@ -1,42 +1,237 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #0033ff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0052cc;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.nav-links button {
+  background: transparent;
+  border: none;
+  color: white;
+  margin-left: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nav-links button:hover {
+  text-decoration: underline;
+}
+
+.content {
   padding: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.warehouse-card {
+  color: black;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.warehouse-card:hover {
+  transform: translateY(-3px);
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.inventory-form {
+  color: black;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.form-row input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-ort-btn {
+  margin-top: 0.5rem;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.save-btn:hover {
+  background: #45a049;
+}
+
+.inventory-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventory-table th,
+.inventory-table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+.inventory-table th {
+  background-color: #f0f0f0;
+}
+
+/* Tabellen-Styles für Dashboard */
+.dashboard-table {
+  color: black;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.dashboard-table .table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-table .table-toolbar input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.dashboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+.dashboard-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f7f7f7;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dashboard-table tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+
+.dashboard-table tbody tr:hover {
+  background: #f0f8ff;
+}
+
+.table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.table-footer .pager button {
+  margin-left: 0.3rem;
+}
+
+.free-slots {
+  color: black;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.free-slots .scroll {
+  max-height: 300px;
+  overflow: auto;
+}
+/* Dashboard Layout */
+.reihe {
+  margin-bottom: 2rem;
+}
+
+.regal-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.regal {
+  background: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 8px;
+  min-width: 250px;
+}
+
+.regal-ebene {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.platz {
+  background: #e0e0e0;
+  border-radius: 4px;
+  height: 25px;
   text-align: center;
+  font-size: 0.7rem;
+  line-height: 25px;
+  transition: background 0.2s;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.platz.belegt {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
 }

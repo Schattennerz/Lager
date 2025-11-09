@@ -1,0 +1,14 @@
+[
+  {
+    "artikelNr": "A1001",
+    "lagerNr": "L-001",
+    "bestand": 50,
+    "lagerorte": ["01.01.01.01", "01.01.01.02"]
+  },
+  {
+    "artikelNr": "A2005",
+    "lagerNr": "L-002",
+    "bestand": 80,
+    "lagerorte": ["02.03.02.05"]
+  }
+]
